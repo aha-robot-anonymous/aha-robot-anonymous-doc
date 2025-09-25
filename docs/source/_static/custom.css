@@ -1,0 +1,37 @@
+/* Custom CSS for table word wrapping */
+
+/* 让表格单元格内容自动换行 */
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 200px; /* 设置最大宽度 */
+}
+
+/* 对于长链接，允许换行 */
+.wy-table-responsive table td a {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* 确保表格在小屏幕上也能正常显示 */
+@media screen and (max-width: 768px) {
+    .wy-table-responsive table td,
+    .wy-table-responsive table th {
+        max-width: 150px;
+        font-size: 0.9em;
+    }
+}
+
+/* 对于特别长的文本，使用省略号 */
+.wy-table-responsive table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* 确保表格容器可以水平滚动 */
+.wy-table-responsive {
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
